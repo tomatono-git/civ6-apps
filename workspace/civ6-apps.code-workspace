@@ -35,8 +35,9 @@
 		},
 		"editor.bracketPairColorization.enabled": true,
 		"editor.renderWhitespace": "all",
-		"files.trimTrailingWhitespace": true,
 		"explorer.confirmDelete": false,
 		"explorer.confirmDragAndDrop": false,
+		"editor.formatOnType": true,
+		"files.trimTrailingWhitespace": true,
 	},
 }
