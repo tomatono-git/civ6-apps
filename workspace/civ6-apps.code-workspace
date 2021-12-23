@@ -39,5 +39,6 @@
 		"explorer.confirmDragAndDrop": false,
 		"editor.formatOnType": true,
 		"files.trimTrailingWhitespace": true,
+		"git.autofetch": true,
 	},
 }
