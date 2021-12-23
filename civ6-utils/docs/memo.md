@@ -1,7 +1,9 @@
 # メモ civ6-utils
 
 ## ターミナルをWSLにする
+
 C:\Users\[UserName]\AppData\Roaming\Code\User\settings.json
+
 ```json
 {
     "terminal.integrated.defaultProfile.windows": "Ubuntu-20.04 (WSL)",
@@ -31,4 +33,3 @@ C:\Users\[UserName]\AppData\Roaming\Code\User\settings.json
     },
 }
 ```
-
