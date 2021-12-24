@@ -6,6 +6,9 @@
 		{
 			"path": "../civ6-utils",
 		},
+		{
+			"path": "../docker-postgresql",
+		},
 	],
 	"settings": {
 		"terminal.integrated.defaultProfile.windows": "Ubuntu-20.04 (WSL)",
