@@ -9,6 +9,9 @@
 		{
 			"path": "../docker-postgresql",
 		},
+		{
+			"path": "../TypeOrmDemo",
+		},
 	],
 	"settings": {
 		"terminal.integrated.defaultProfile.windows": "Ubuntu-20.04 (WSL)",
