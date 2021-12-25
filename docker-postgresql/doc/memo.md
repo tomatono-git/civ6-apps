@@ -1,14 +1,21 @@
 # docker-postgresql メモ
 
-dockerfile
+## 参考
+
+Docker で作る postgres 環境 | Crudzoo
+<https://crudzoo.com/blog/docker-postgres>
+
+docker composeを使ってPostgreSQLを構築する | mebee
+<https://mebee.info/2020/12/04/post-24686/>
+
+## 環境構築
+
+dockerfile (不要？)
 
 ```dockerfile
 FROM postgres:11-alpine
 ENV LANG ja_JP.utf8
 ```
-
-Docker で作る postgres 環境 | Crudzoo
-<https://crudzoo.com/blog/docker-postgres>
 
 docker-compose.yaml
 
@@ -79,7 +86,7 @@ docker-compose down
 コンテナに中に入る
 
 ```sh
-docker-compose exec db bash
+docker-compose exec postgres bash
 ```
 
 exexコマンドの使用例
@@ -88,7 +95,7 @@ exexコマンドの使用例
 docker-compose exec [コンテナ名] [コマンド]
 ```
 
-コンテナ名は services で指定した名前。下記だと db 。
+コンテナ名は services で指定した名前。下記だと postgres 。
 
 ```yaml
 version: '3'
@@ -107,6 +114,20 @@ PostgreSQLに接続
 psql -U civ6_mod_dev
 ```
 
+## コンテナを再構築
+
+キャッシュを使わないでビルド
+
+```sh
+docker-compose build --no-cache
+```
+
+コンテナを再作成してから起動
+
+```sh
+docker-compose up --force-recreate
+```
+
 ## 設定ファイルなどのパス
 
 ```path
@@ -116,3 +137,8 @@ psql -U civ6_mod_dev
 ## docker image
 
 <https://hub.docker.com/_/postgres>
+
+## PgAdmin
+
+- URL
+  <http://localhost:81>

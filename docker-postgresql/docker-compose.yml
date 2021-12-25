@@ -2,12 +2,12 @@ version: '3'
 
 services:
   postgres:
-    image: postgres:latest
+    image: postgres:14.1
     restart: always
     environment:
-      POSTGRES_USER: civ6_mod_dev
-      POSTGRES_PASSWORD: password
-      PGPASSWORD: pass
+      POSTGRES_USER: civ6_mod
+      POSTGRES_PASSWORD: pass
+      PGPASSWORD: pswd
       POSTGRES_DB: civ6_mod
       TZ: "Asia/Tokyo"
     ports:
