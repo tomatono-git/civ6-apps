@@ -60,6 +60,12 @@ typeorm のプロジェクトを作成
 npx typeorm init --name TypeOrmDemo --database postgres
 ```
 
+マイグレーション
+
+```sh
+npx typeorm migration:create -n Civ6ModMigration
+```
+
 ## ターミナルをWSLにする
 
 C:\Users\[UserName]\AppData\Roaming\Code\User\settings.json
