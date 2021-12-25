@@ -44,7 +44,7 @@ pg, typeorm のインストール。
 pg はPostgreSQL用。
 
 ```sh
-yarn add pg typeorm
+yarn add pg typeorm reflect-metadata
 ```
 
 tsconfig.json に以下の設定がされていること。
