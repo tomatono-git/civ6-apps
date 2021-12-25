@@ -33,6 +33,33 @@
 Node.jsはWSLに入れる？
 VSCodeのコマンドラインをWSLにすれば普通にnodeコマンドが使える？
 
+## DB
+
+### TypeORM
+
+TypeORM - 公式
+<https://typeorm.io/#/>
+
+pg, typeorm のインストール。
+pg はPostgreSQL用。
+
+```sh
+yarn add pg typeorm
+```
+
+tsconfig.json に以下の設定がされていること。
+
+```json
+"emitDecoratorMetadata": true,
+"experimentalDecorators": true,
+```
+
+typeorm のプロジェクトを作成
+
+```sh
+npx typeorm init --name TypeOrmDemo --database postgres
+```
+
 ## ターミナルをWSLにする
 
 C:\Users\[UserName]\AppData\Roaming\Code\User\settings.json

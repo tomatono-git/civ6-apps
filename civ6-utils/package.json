@@ -22,6 +22,8 @@
   },
   "dependencies": {
     "@types/xml2js": "^0.4.9",
+    "pg": "^8.7.1",
+    "typeorm": "^0.2.41",
     "xml2js": "^0.4.23",
     "yaml": "^1.10.2"
   }
