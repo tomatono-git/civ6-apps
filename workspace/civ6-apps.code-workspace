@@ -7,7 +7,7 @@
 			"path": "../civ6-utils",
 		},
 		{
-			"path": "../docker-postgresql",
+			"path": "../docker",
 		},
 		{
 			"path": "../TypeOrmDemo",
