@@ -8,6 +8,8 @@ wsl2のインストール
 wsl --install
 ```
 
+自動でインストールされるUbuntuが気に入らなければ、アプリと機能からアンインストールしてMicfosoft Storeからインストールする。
+
 ## VSCode のターミナルをWSLにする
 
 C:\Users\[UserName]\AppData\Roaming\Code\User\settings.json
@@ -40,4 +42,30 @@ C:\Users\[UserName]\AppData\Roaming\Code\User\settings.json
         }
     },
 }
+```
+
+## node 環境構築
+
+wslに入る
+
+```powershell
+wsl
+```
+
+nvm のインストール
+
+```sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+```
+
+インストール後は`exit`でWSLを終了して、`wsl`でもう一度入りなおす。
+
+現在インストールされている Node のバージョンを一覧表示。（まだ何もない）
+
+```sh
+nvm ls
+```
+
+```sh
+nvm install 17.3.0
 ```

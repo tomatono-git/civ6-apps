@@ -7,6 +7,12 @@
 			"path": "../civ6-utils",
 		},
 		{
+			"path": "../civ6-client",
+		},
+		{
+			"path": "../civ6-server",
+		},
+		{
 			"path": "../docker",
 		},
 		{
