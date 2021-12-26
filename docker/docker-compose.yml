@@ -10,6 +10,9 @@ services:
       - ../../civ6-utils:/workspace/civ6-utils
       - ../../civ6-client:/workspace/civ6-client
       - ../../civ6-server:/workspace/civ6-server
+      - ignore_node_modules_civ6_utils:../../civ6-utils/node_modules
+      - ignore_node_modules_civ6_client:../../civ6-client/node_modules
+      - ignore_node_modules_civ6_server:../../civ6-server/node_modules
     working_dir: "/workspace"
     environment:
       NODE_ENV: development
@@ -48,3 +51,4 @@ services:
 volumes:
   db:
   pgadmin:
+  ignore_node_modules_civ6_utils:
