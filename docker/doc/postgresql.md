@@ -68,14 +68,6 @@ volumes:
   pgadmin:
 ```
 
-## wsl2
-
-wsl2のインストール
-
-```sh
-wsl --install
-```
-
 ## docker 起動
 
 コンテナを構築、作成、起動、アタッチ
