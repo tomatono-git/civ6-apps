@@ -54,17 +54,37 @@ tsconfig.json に以下の設定がされていること。
 "experimentalDecorators": true,
 ```
 
-typeorm のプロジェクトを作成
+#### npm run スクリプト
+
+マイグレーション
+
+```sh
+npm run typeorm migration:generate -- -n Civ6ModMigration
+```
+
+マイグレーション
+
+```sh
+npm run typeorm migration:run
+```
+
+#### typeorm のプロジェクトを作成
 
 ```sh
 npx typeorm init --name TypeOrmDemo --database postgres
 ```
+
+#### その他
 
 マイグレーション
 
 ```sh
 npx typeorm migration:create -n Civ6ModMigration
 ```
+
+<!-- ```sh
+ts-node ./node_modules/.bin/typeorm migration:generate -n Civ6ModMigration
+``` -->
 
 ## ターミナルをWSLにする
 
