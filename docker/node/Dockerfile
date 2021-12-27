@@ -1,10 +1,10 @@
 FROM node
 
 # shファイルをコンテナにコピー
-ADD ./packege_install.sh /tmp/packege_install.sh
+ADD ./packege_install.sh /workspace/packege_install.sh
 
 # shファイルを実行
-RUN /tmp/packege_install.sh
+# RUN /workspace/packege_install.sh
 
 # # yarn install
 # RUN cd /workspace/civ6-utils && yarn install

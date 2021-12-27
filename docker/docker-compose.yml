@@ -24,6 +24,7 @@ services:
     ports:
       - '13000:3000'
     # command:
+    #   "bash /workspace/packege_install.sh"
     #   npm start
 
   postgres:
