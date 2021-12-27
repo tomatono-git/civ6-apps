@@ -66,5 +66,9 @@ export class Unit {
     /** 更新日時 */
     @UpdateDateColumn({ name: 'updated_at', type: 'timestamp', precision: 0 })
     readonly updatedAt?: Date;
+
+    public constructor(element?: Partial<Unit>) {
+        Object.assign(this, element ? element : {});
+    }
 }
 

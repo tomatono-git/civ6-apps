@@ -10,6 +10,7 @@ services:
       - ../civ6-cli:/workspace/civ6-cli
       - ../civ6-client:/workspace/civ6-client
       - ../civ6-server:/workspace/civ6-server
+      - ../workspace:/workspace/workspace
       # - /mnt/g/game/Steam/steamapps/common/Sid\ Meier\'s\ Civilization\ VI:/workspace/civ6_install
       - /mnt/g/game/Steam/steamapps/common/:/workspace/steamapps_common
       # - ../../../../game/Steam/steamapps/common:/workspace/steamapps_common

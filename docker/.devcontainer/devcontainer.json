@@ -1,11 +1,11 @@
 {
-	"name": "node_dev", // コンテナ表示名
+	"name": "cli", // コンテナ表示名
 	"dockerComposeFile": [
 		"../docker-compose.yml" // Docker Composeのファイルパス
 	],
 	"service": "app", // Docker Composeの接続サービス名
 	// "remoteUser": "app_dev", // デフォルトユーザをrootから切り替える
-	// "workspaceFolder": "/home/app_dev", // Workspaceのフォルダを指定
+	// "workspaceFolder": "/workspace/civ6-cli",
 	"extensions": [ // コンテナ内でインストールするVS Codeの拡張機能ID
         "dbaeumer.vscode-eslint",
 		"esbenp.prettier-vscode",
@@ -30,5 +30,5 @@
 		"eslint.workingDirectories": [
 			{ "mode": "auto" }
 		],
-	}
+	},
 }
