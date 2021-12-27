@@ -1,4 +1,4 @@
-# メモ civ6-utils
+# メモ civ6-cli
 
 ## 機能
 

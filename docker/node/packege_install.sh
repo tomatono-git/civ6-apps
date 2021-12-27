@@ -1,17 +1,17 @@
 #!/bin/bash
 
-utils_dir=/workspace/civ6-utils
+cli_dir=/workspace/civ6-cli
 client_dir=/workspace/civ6-client
 server_dir=/workspace/civ6-server
 
 # yarn install
-# cd /workspace/civ6-utils && yarn install
+# cd /workspace/civ6-cli && yarn install
 # cd /workspace/civ6-client && yarn install
 # cd /workspace/civ6-server && yarn install
 
-if [ -d utils_dir ]; then
-    if [ ! -d $utils_dir/node_modules ]; then
-        cd $utils_dir && yarn install
+if [ -d cli_dir ]; then
+    if [ ! -d $cli_dir/node_modules ]; then
+        cd $cli_dir && yarn install
     fi
 fi
 
