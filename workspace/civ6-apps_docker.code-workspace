@@ -1,0 +1,68 @@
+{
+	"folders": [
+		// {
+		// 	"path": ".",
+		// },
+		{
+			"path": "../civ6-cli",
+		},
+		{
+			"path": "../civ6-client",
+		},
+		{
+			"path": "../civ6-server",
+		},
+		{
+			"path": "../steamapps_common",
+		},
+		// {
+		// 	"path": "../docker",
+		// },
+		// {
+		// 	"path": "../docs",
+		// },
+		// {
+		// 	"path": "../TypeOrmDemo",
+		// },
+	],
+	"settings": {
+		// "terminal.integrated.defaultProfile.windows": "Ubuntu-20.04 (WSL)",
+		// "terminal.integrated.profiles.windows": {
+		// 	"PowerShell": {
+		// 		"source": "PowerShell",
+		// 		"icon": "terminal-powershell"
+		// 	},
+		// 	"Command Prompt": {
+		// 		"path": [
+		// 			"${env:windir}\\Sysnative\\cmd.exe",
+		// 			"${env:windir}\\System32\\cmd.exe"
+		// 		],
+		// 		"args": [],
+		// 		"icon": "terminal-cmd"
+		// 	},
+		// 	"Git Bash": {
+		// 		"source": "Git Bash"
+		// 	},
+		// 	"Ubuntu-20.04 (WSL)": {
+		// 		"path": "C:\\WINDOWS\\System32\\wsl.exe",
+		// 		"args": [
+		// 			"-d",
+		// 			"Ubuntu-20.04"
+		// 		]
+		// 	}
+		// },
+		"editor.bracketPairColorization.enabled": true,
+		"editor.renderWhitespace": "all",
+		"explorer.confirmDelete": false,
+		"explorer.confirmDragAndDrop": false,
+		"editor.formatOnType": true,
+		"files.trimTrailingWhitespace": true,
+		"git.autofetch": true,
+		"[markdown]":{
+			"editor.unicodeHighlight.ambiguousCharacters": false,
+			"editor.wordWrap": "on",
+			"editor.quickSuggestions": false,
+			"editor.tabSize": 2,
+		},
+	},
+}
