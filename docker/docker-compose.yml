@@ -1,0 +1,56 @@
+version: '3'
+
+services:
+  app:
+    build: node
+    image: node:17
+    container_name: node_dev
+    tty: true
+    volumes:
+      - ../civ6-utils:/workspace/civ6-utils
+      - ../civ6-client:/workspace/civ6-client
+      - ../civ6-server:/workspace/civ6-server
+      # - ignore_node_modules_civ6_utils:../../civ6-utils/node_modules
+      # - ignore_node_modules_civ6_client:../../civ6-client/node_modules
+      # - ignore_node_modules_civ6_server:../../civ6-server/node_modules
+    working_dir: "/workspace"
+    environment:
+      NODE_ENV: development
+    ports:
+      - '13000:3000'
+    # command:
+    #   npm start
+
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: civ6_mod
+      POSTGRES_PASSWORD: pass
+      PGPASSWORD: pswd
+      POSTGRES_DB: civ6_mod
+      TZ: "Asia/Tokyo"
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - 18080:80
+    environment:
+      PGADMIN_DEFAULT_EMAIL: tomatono@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: pass
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+    depends_on:
+      - postgres
+
+volumes:
+  postgres:
+  pgadmin:
+  # ignore_node_modules_civ6_utils:
+  # ignore_node_modules_civ6_client:
+  # ignore_node_modules_civ6_server:

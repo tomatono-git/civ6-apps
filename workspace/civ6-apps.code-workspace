@@ -7,7 +7,16 @@
 			"path": "../civ6-utils",
 		},
 		{
-			"path": "../docker-postgresql",
+			"path": "../civ6-client",
+		},
+		{
+			"path": "../civ6-server",
+		},
+		{
+			"path": "../docker",
+		},
+		{
+			"path": "../docs",
 		},
 		{
 			"path": "../TypeOrmDemo",
