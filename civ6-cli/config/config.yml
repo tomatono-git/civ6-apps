@@ -1,0 +1,9 @@
+# Civilization 6 のインストール先ディレクトリ
+install_dir: /workspace/steamapps_common/Sid Meier's Civilization VI
+# install_dir: G:\game\Steam\steamapps\common\Sid Meier's Civilization VI
+
+# 作成者(DB登録)
+create_user: civ6-cli
+
+# 更新者(DB登録)
+update_user: civ6-cli

@@ -17,6 +17,7 @@ export class UnitsXmlParser {
             for (const row of unitRows) {
                 // const unitRow = row.$;
                 const unit = new Unit(row.$);
+
                 console.log('unit: %s=%o', unit.UnitType, unit);
             }
         }

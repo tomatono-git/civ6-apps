@@ -1,49 +1,91 @@
 import path from 'path';
-import { ConfigReader } from './reader/ConfigReader';
-import { XmlReader } from './reader/XmlReader';
-import { UnitsXmlParser } from './parser/UnitsXmlParser';
+// import { Connection, createConnection, getRepository } from 'typeorm';
 
-const action = async () => {
+// import { ConfigReader } from 'io/config/ConfigReader';
+import { ConfigManager } from 'io/config/ConfigManager';
+import { XmlReader } from 'io/reader/XmlReader';
+import { UnitsXmlParser } from 'io/parser/UnitsXmlParser';
 
-    // 設定ファイルを読み込む
-    const config = await new ConfigReader().read('config');
-    // const configFile = fs.readFileSync('./config/config.yaml', 'utf8');
-    // const config = YAML.parse(configFile);
+// import { Unit } from 'db/entity/Unit';
+import { UnitRepository } from 'db/repository/UnitRepository';
 
-    // TODO debug
-    console.log('config=%o', config);
+export class Main {
+    public static async execute() {
 
-    // インストール先
-    const installDir = (config.install_dir as string).replace('\\', '/');
-    // Units.xml のパス
-    const unitsPath = path.join(installDir, 'Base/Assets/Gameplay/Data/Units.xml');
+        var args = process.argv;
 
-    // Units.xml を読み込む
-    const unitsXml = await new XmlReader().read(unitsPath);
-    // Units.xml をパース
-    const units = new UnitsXmlParser().parse(unitsXml);
+        // 設定ファイルを読み込む
+        const config = await ConfigManager.loadConfig();
 
-    // // TODO debug
-    // console.log('unitsXml.GameInfo?.Units=%o', unitsXml.GameInfo?.Units);
+        // インストール先
+        const installDir = (config.install_dir as string).replace('\\', '/');
+        // Units.xml のパス
+        const unitsPath = path.join(installDir, 'Base/Assets/Gameplay/Data/Units.xml');
 
-    // // TODO debug
-    // // console.log('args1=%o', units.args1);
-    // console.log('unitsXml.GameInfo=%o', unitsXml.GameInfo);
-    // console.log('unitsXml.GameInfo?.Units=%o', unitsXml.GameInfo?.Units);
+        // Units.xml を読み込む
+        const unitsXml = await new XmlReader().read(unitsPath);
+        // Units.xml をパース
+        const units = new UnitsXmlParser().parse(unitsXml);
 
-    // const units = unitsXml.GameInfo?.Units;
-    // if (units.length > 0)
-    // {
-    //     const unitRows = units[0].Row as any[];
-    //     for (const row of unitRows) {
-    //         const unit = row.$;
-    //         console.log('unit: %s=%o', unit.UnitType, unit);
-    //     }
-    // }
+        const repository = new UnitRepository();
+        // ユニットをDBに登録
+        const result = repository.save(units);
 
-};
+        // TODO debug
+        console.log('ユニットをDBに登録: %o', result);
 
-action().catch(error => {
-    console.log('error=%o', error);
-});
+        // let connection: Connection | null = null;
+        // try {
+        //     // DBに接続
+        //     connection = await createConnection();
+
+        //     const userRepository = getRepository(Unit);
+        //     // ユニットをDBに登録
+        //     userRepository.save(units);
+        // } finally {
+        //     if (connection != null) {
+        //         // DB接続を閉じる
+        //         connection.close();
+        //     }
+        // }
+    }
+}
+
+// const action = async () => {
+
+//     // 設定ファイルを読み込む
+//     const config = await ConfigManager.loadConfig();
+//     // const config = await new ConfigReader().read('config');
+//     // const configFile = fs.readFileSync('./config/config.yaml', 'utf8');
+//     // const config = YAML.parse(configFile);
+
+//     // // TODO debug
+//     // console.log('config=%o', config);
+
+//     // インストール先
+//     const installDir = (config.install_dir as string).replace('\\', '/');
+//     // Units.xml のパス
+//     const unitsPath = path.join(installDir, 'Base/Assets/Gameplay/Data/Units.xml');
+
+//     // Units.xml を読み込む
+//     const unitsXml = await new XmlReader().read(unitsPath);
+//     // Units.xml をパース
+//     const units = new UnitsXmlParser().parse(unitsXml);
+
+//     let connection: Connection | null = null;
+//     try {
+//         connection = await createConnection();
+
+//         const userRepository = getRepository(Unit);
+//         userRepository.save(units);
+//     } finally {
+//         if (connection != null) {
+//             connection.close();
+//         }
+//     }
+// };
+
+// action().catch(error => {
+//     console.log('error=%o', error);
+// });
 

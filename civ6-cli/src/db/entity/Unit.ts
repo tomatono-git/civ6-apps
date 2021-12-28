@@ -63,12 +63,24 @@ export class Unit {
     @CreateDateColumn({ name: 'created_at', type: 'timestamp', precision: 0 })
     readonly createdAt?: Date;
 
+    /** 登録者 */
+    @Column('varchar', { name: 'create_user', length: 50, nullable: false })
+    CreateUser?: string;
+
     /** 更新日時 */
     @UpdateDateColumn({ name: 'updated_at', type: 'timestamp', precision: 0 })
     readonly updatedAt?: Date;
 
-    public constructor(element?: Partial<Unit>) {
-        Object.assign(this, element ? element : {});
+    /** 更新者 */
+    @Column('varchar', { name: 'update_user', length: 50, nullable: false })
+    UpdateUser?: string;
+
+    /**
+     * コンストラクタ
+     * @param props プロパティ
+     */
+    public constructor(props?: Partial<Unit>) {
+        Object.assign(this, props ? props : {});
     }
 }
 
